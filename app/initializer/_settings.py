@@ -59,19 +59,6 @@ class Settings(BaseSettings):
     log_enable_console: bool = Field(default=True, description="启用控制台日志")
     log_enable_file: bool = Field(default=True, description="启用文件日志")
 
-    # ===== JWT 配置 =====
-    jwt_secret_key: str = Field(
-        default="your-secret-key-change-in-production",
-        description="JWT密钥（生产环境必须修改）",
-    )
-    jwt_algorithm: str = Field(default="HS256", description="JWT算法")
-    jwt_expire_minutes: int = Field(default=1440, description="JWT过期时间（分钟）")
-
-    # ===== API Key 配置 =====
-    api_keys: list[str] = Field(default=["demo_api_key"], description="有效的API密钥列表")
-    api_key_prefix: str = Field(default="anq_", description="API Key前缀")
-    api_key_length: int = Field(default=32, description="API Key长度")
-
     # ===== 统一路由安全配置 =====
     api_allowed_resources: list[str] = Field(default=["user"], description="统一路由允许的资源白名单")
     unified_route_allow_all: bool = Field(default=False, description="统一路由是否允许所有资源")
