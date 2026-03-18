@@ -15,7 +15,6 @@ from app.initializer._db import Base
 
 class User(Base):
     """User 数据模型"""
-
     __tablename__ = "user"
 
     # 主键ID (使用雪花ID，字符串类型)

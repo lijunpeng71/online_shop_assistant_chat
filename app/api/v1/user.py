@@ -21,8 +21,8 @@ _tag = "user"
 
 @router.get("")
 async def list_user(
-    page: int = 1,
-    size: int = 10,
+        page: int = 1,
+        size: int = 10,
 ) -> dict:
     service = UserService()
     items, total = await service.list(page=page, size=size)
@@ -31,7 +31,7 @@ async def list_user(
 
 @router.get("/{id}")
 async def get_user(
-    id: str
+        id: str
 ) -> dict:
     service = UserService()
     data = await service.get(id)
@@ -42,7 +42,7 @@ async def get_user(
 
 @router.post("")
 async def create_user(
-    payload: UserCreate
+        payload: UserCreate
 ) -> dict:
     service = UserService()
     new_id = await service.create(payload)
@@ -51,8 +51,8 @@ async def create_user(
 
 @router.patch("/{id}")
 async def update_user(
-    id: str,
-    payload: UserUpdate,
+        id: str,
+        payload: UserUpdate,
 ) -> dict:
     service = UserService()
     ok = await service.update(id, payload)
@@ -63,7 +63,7 @@ async def update_user(
 
 @router.delete("/{id}")
 async def delete_user(
-    id: str
+        id: str
 ) -> dict:
     service = UserService()
     ok = await service.delete(id)
